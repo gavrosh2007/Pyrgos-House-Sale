@@ -33,6 +33,33 @@
             text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7), 
                          4px 4px 0px rgba(0, 0, 0, 0.5);
         }
+        .lang-bar {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+        .lang-btn {
+            background: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        .lang-btn.active {
+            background: #e8491d;
+        }
+        .music-btn {
+            background: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 8px;
+        }
         .property-info {
             padding: 20px;
             margin: 20px 0;
@@ -61,47 +88,177 @@
             border-top: 1px solid #e8491d;
         }
         .contact-info a {
-            color: #d3d3d3; /* Light gray color */
+            color: #d3d3d3;
             text-decoration: none;
         }
         .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .lang-content {
+            display: none;
+        }
+        .lang-content.active {
+            display: block;
+        }
+        footer a {
+            color: #e8491d;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        footer a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Stunning 5-Bedroom House for Sale in Cyprus</h1>
+        <h1 id="mainTitle">Stunning 5-Bedroom House for Sale in Cyprus</h1>
     </header>
     <div class="container">
+        <div class="lang-bar">
+            <button class="lang-btn active" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button id="musicToggleBtn" class="music-btn">🎵 Play Music</button>
+        </div>
+        
         <audio id="audio" loop>
             <source src="https://www.dropbox.com/scl/fi/ztj1cde5ffl34xfimzp9i/piki-piki-dance-tiktok-viral-dance-128-ytshorts.savetube.me.mp3?rlkey=iybcbj4b4gpqpmn38ca67glzn&dl=1" type="audio/mpeg">
-            Ваш браузер не поддерживает аудиофайлы.
+            Your browser does not support the audio element.
         </audio>
-        <button onclick="document.getElementById('audio').play()">Play Music</button>
-        <div class="property-info">
-            <h2>Description</h2>
-            <p>This 350 m² house, built in 2010, includes an antique hall and is located on a 600 m² plot in the center of Pyrgos, a suburb of Limassol. This area has a rich history, being the birthplace of perfumery thanks to Queen Cleopatra.</p>
-            <p>The house features 5 bedrooms, a separate kitchen, a veranda, and a swimming pool. There are also 3 bathrooms, a separate shower by the pool, and plenty of utility rooms, allowing the house to be transformed into a mini-hotel.</p>
-            <p>Advantages include the antique hall, one-meter thick stone walls providing unique thermal insulation, a foyer, and a separate kitchen. The house is equipped with underfloor heating, air conditioning, a separate laundry room, and one of the five bedrooms overlooking the pool. There is also potential for solar panels on the flat roof.</p>
-            <h3>Price: €750,000 (negotiable)</h3>
-            <a href="mailto:gavrosh2007@gmail.com" class="cta">Contact Us</a>
-            <h3>Photos</h3>
-            <a href="https://www.dropbox.com/scl/fo/yesufog7kgrlxbe4n396t/AL3iiDg3pGW7JJV3D_TSlHM?rlkey=t815b871mg107uih347gy8xgv" class="cta">View More Photos</a>
+
+        <!-- Русская версия -->
+        <div id="ru-content" class="lang-content active">
+            <div class="property-info">
+                <h2>Описание</h2>
+                <p>Дом площадью 250 м², построен в 2010 году, включает античный зал и расположен на участке 600 м² в центре Пиргоса, пригорода Лимассола. Этот район имеет богатую историю, являясь родиной парфюмерии благодаря царице Клеопатре.</p>
+                <p>В доме 5 спален, отдельная кухня, веранда и бассейн. Также имеются 3 ванные комнаты, отдельный душ у бассейна и множество подсобных помещений, что позволяет превратить дом в мини-отель.</p>
+                <p>Преимущества: античный зал, метровые каменные стены, обеспечивающие уникальную теплоизоляцию, фойе и отдельная кухня. Дом оснащён тёплыми полами, кондиционерами, отдельной прачечной, одна из пяти спален выходит к бассейну. Есть возможность установки солнечных панелей на плоской крыше.</p>
+                <h3>Цена: €900 000 (договорная)</h3>
+                <a href="mailto:gavrosh2007@gmail.com" class="cta">Связаться</a>
+                <h3>Фотографии</h3>
+                <a href="https://www.dropbox.com/scl/fo/yesufog7kgrlxbe4n396t/AL3iiDg3pGW7JJV3D_TSlHM?rlkey=t815b871mg107uih347gy8xgv" class="cta">Посмотреть фото</a>
+            </div>
+            <div class="contact-info">
+                <h3>Контактная информация</h3>
+                <p>Телефон (GSM/WhatsApp/Viber): +357 99453575</p>
+                <p>Email: <a href="mailto:gavrosh2007@gmail.com">gavrosh2007@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/andriy-gavrylenko-43603b150" target="_blank">Профиль</a></p>
+                <p>Facebook: <a href="https://www.facebook.com/andriygavr" target="_blank">Страница</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/gavrosh22/" target="_blank">@gavrosh22</a></p>
+                <p>Telegram: @faufautua, @artboutique22, @hermesmcltd1</p>
+                <p>Twitter: <a href="https://x.com/gavrylen1" target="_blank">@gavrylen1</a></p>
+            </div>
         </div>
-        <div class="contact-info">
-            <h3>Contact Information</h3>
-            <p>Phone (GSM/WhatsApp/Viber): +357 99453575</p>
-            <p>Email: <a href="mailto:gavrosh2007@gmail.com">gavrosh2007@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/andriy-gavrylenko-43603b150" target="_blank">Profile</a></p>
-            <p>Facebook: <a href="https://www.facebook.com/andriygavr" target="_blank">Profile</a></p>
-            <p>Instagram: <a href="https://www.instagram.com/gavrosh22/" target="_blank">Profile</a></p>
-            <p>Telegram: @faufautua, t.me/artboutique22, @hermesmcltd, @hermesmcbot, @RBartsalonBot>
-            <p>Twitter: <a href="https://x.com/gavrylen1" target="_blank">@gavrosh22</a></p>
+
+        <!-- Английская версия -->
+        <div id="en-content" class="lang-content">
+            <div class="property-info">
+                <h2>Description</h2>
+                <p>This 250 m² house, built in 2010, includes an antique hall and is located on a 600 m² plot in the center of Pyrgos, a suburb of Limassol. This area has a rich history, being the birthplace of perfumery thanks to Queen Cleopatra.</p>
+                <p>The house features 5 bedrooms, a separate kitchen, a veranda, and a swimming pool. There are also 3 bathrooms, a separate shower by the pool, and plenty of utility rooms, allowing the house to be transformed into a mini-hotel.</p>
+                <p>Advantages include the antique hall, one-meter thick stone walls providing unique thermal insulation, a foyer, and a separate kitchen. The house is equipped with underfloor heating, air conditioning, a separate laundry room, and one of the five bedrooms overlooks the pool. There is also potential for solar panels on the flat roof.</p>
+                <h3>Price: €900,000 (negotiable)</h3>
+                <a href="mailto:gavrosh2007@gmail.com" class="cta">Contact Us</a>
+                <h3>Photos</h3>
+                <a href="https://www.dropbox.com/scl/fo/yesufog7kgrlxbe4n396t/AL3iiDg3pGW7JJV3D_TSlHM?rlkey=t815b871mg107uih347gy8xgv" class="cta">View More Photos</a>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Phone (GSM/WhatsApp/Viber): +357 99453575</p>
+                <p>Email: <a href="mailto:gavrosh2007@gmail.com">gavrosh2007@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/andriy-gavrylenko-43603b150" target="_blank">Profile</a></p>
+                <p>Facebook: <a href="https://www.facebook.com/andriygavr" target="_blank">Page</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/gavrosh22/" target="_blank">@gavrosh22</a></p>
+                <p>Telegram: @faufautua, @artboutique22, @hermesmcltd1</p>
+                <p>Twitter: <a href="https://x.com/gavrylen1" target="_blank">@gavrylen1</a></p>
+            </div>
         </div>
+
+        <footer>
+            <div id="footer-ru" style="display: block;">
+                <p>© 2025 Продажа дома на Кипре</p>
+                <p>
+                    <a href="privacy.html">Политика конфиденциальности</a> |
+                    <a href="terms.html">Условия использования</a> |
+                    <a href="robots.txt" target="_blank">robots.txt</a> |
+                    <a href="sitemap.xml" target="_blank">sitemap.xml</a> |
+                    <a href="humans.txt" target="_blank">humans.txt</a>
+                </p>
+            </div>
+            <div id="footer-en" style="display: none;">
+                <p>© 2025 House for Sale in Cyprus</p>
+                <p>
+                    <a href="privacy.html">Privacy Policy</a> |
+                    <a href="terms.html">Terms of Use</a> |
+                    <a href="robots.txt" target="_blank">robots.txt</a> |
+                    <a href="sitemap.xml" target="_blank">sitemap.xml</a> |
+                    <a href="humans.txt" target="_blank">humans.txt</a>
+                </p>
+            </div>
+        </footer>
     </div>
-    <footer>
-        <p>&copy; 2024 Beautiful House for Sale in Cyprus</p>
-    </footer>
+
+    <script>
+        // ---- Музыка (toggle play/pause) ----
+        const audioElem = document.getElementById('audio');
+        const musicBtn = document.getElementById('musicToggleBtn');
+        let isPlaying = false;
+
+        function updateMusicButtonText() {
+            const lang = document.querySelector('.lang-btn.active').dataset.lang;
+            if (lang === 'ru') {
+                musicBtn.innerHTML = isPlaying ? '⏸ Пауза' : '🎵 Включить музыку';
+            } else {
+                musicBtn.innerHTML = isPlaying ? '⏸ Pause' : '🎵 Play Music';
+            }
+        }
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audioElem.pause();
+                isPlaying = false;
+            } else {
+                audioElem.play().catch(e => console.warn('Audio play failed:', e));
+                isPlaying = true;
+            }
+            updateMusicButtonText();
+        });
+
+        // ---- Переключение языков ----
+        const ruDiv = document.getElementById('ru-content');
+        const enDiv = document.getElementById('en-content');
+        const footerRu = document.getElementById('footer-ru');
+        const footerEn = document.getElementById('footer-en');
+        const langBtns = document.querySelectorAll('.lang-btn');
+
+        function setLanguage(lang) {
+            if (lang === 'ru') {
+                ruDiv.classList.add('active');
+                enDiv.classList.remove('active');
+                footerRu.style.display = 'block';
+                footerEn.style.display = 'none';
+            } else {
+                ruDiv.classList.remove('active');
+                enDiv.classList.add('active');
+                footerRu.style.display = 'none';
+                footerEn.style.display = 'block';
+            }
+            langBtns.forEach(btn => {
+                if (btn.dataset.lang === lang) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+            updateMusicButtonText();
+        }
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        // Инициализация
+        setLanguage('ru');
+
+        // Если аудио не загрузилось (пользователь не кликнул), предзагрузка не обязательна
+        audioElem.load();
+    </script>
 </body>
 </html>
