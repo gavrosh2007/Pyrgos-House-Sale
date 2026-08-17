@@ -108,6 +108,102 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* ===== ПЛАТЁЖНЫЙ МОДУЛЬ (адаптирован под тёмную тему) ===== */
+        .payment-module {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(232, 73, 29, 0.4);
+            margin: 2rem auto;
+            max-width: 100%;
+        }
+        .pay-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .pay-card {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(232, 73, 29, 0.2);
+        }
+        .pay-card h3 {
+            color: #e8491d;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .pay-card p.desc {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .pay-card .amount-row {
+            margin: 1rem 0;
+        }
+        .pay-card .amount-row label {
+            font-weight: bold;
+            color: #eee;
+        }
+        .pay-card .amount-row input {
+            width: 120px;
+            padding: 0.3rem;
+            border-radius: 2rem;
+            border: 1px solid #e8491d;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+        .pay-card .pay-btn {
+            background: #2c5f2d;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 60px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+        .pay-card .pay-btn:hover {
+            background: #1f4a20;
+            transform: scale(1.02);
+        }
+        .pay-card .currency-note {
+            font-size: 0.7rem;
+            margin-top: 0.8rem;
+            color: #999;
+        }
+        .info-note {
+            margin-top: 2rem;
+            padding: 1.2rem;
+            background: rgba(232, 73, 29, 0.1);
+            border-radius: 2rem;
+            border-left: 4px solid #e8491d;
+        }
+        .info-note p {
+            font-size: 1rem;
+            color: #ddd;
+            margin: 0;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .info-note a {
+            color: #e8491d;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        @media (max-width: 700px) {
+            .pay-grid { flex-direction: column; }
+            .pay-card { min-width: auto; }
+            .container { width: 95%; padding: 10px; }
+        }
     </style>
 </head>
 <body>
@@ -138,6 +234,42 @@
                 <h3>Фотографии</h3>
                 <a href="https://www.dropbox.com/scl/fo/yesufog7kgrlxbe4n396t/AL3iiDg3pGW7JJV3D_TSlHM?rlkey=t815b871mg107uih347gy8xgv" class="cta">Посмотреть фото</a>
             </div>
+
+            <!-- ===== ПЛАТЁЖНЫЙ МОДУЛЬ (только для пояснений, сумма 20 €) ===== -->
+            <div class="payment-module">
+                <h2 style="color: #e8491d;">💳 Демонстрация оплаты</h2>
+                <p style="color: #ccc;">Это тестовый платёжный модуль для пояснения возможностей.</p>
+                <div class="pay-grid">
+                    <div class="pay-card">
+                        <h3>💳 Обычные деньги</h3>
+                        <p class="desc">Visa, Mastercard, Apple Pay, Google Pay</p>
+                        <div class="amount-row">
+                            <label>Сумма (€):</label>
+                            <input type="number" id="fiat-amount-ru" value="20" min="1" step="1">
+                        </div>
+                        <button class="pay-btn fiat-pay-ru">💳 Оплатить картой</button>
+                        <p class="currency-note">Принимаем: EUR, USD, CHF, JPY, CNY</p>
+                    </div>
+                    <div class="pay-card">
+                        <h3>🪙 Цифровые деньги</h3>
+                        <p class="desc">Bitcoin, Ethereum, USDT и 350+ других</p>
+                        <div class="amount-row">
+                            <label>Сумма (€):</label>
+                            <input type="number" id="crypto-amount-ru" value="20" min="1" step="1">
+                        </div>
+                        <button class="pay-btn crypto-pay-ru">🪙 Оплатить криптой</button>
+                        <p class="currency-note">Клиент выбирает валюту на странице оплаты</p>
+                    </div>
+                </div>
+                <div class="info-note">
+                    <p>
+                        📄 <strong>Индивидуальные условия</strong><br>
+                        Для крупных сделок, корпоративных заказов или нестандартных условий, пожалуйста, 
+                        <a href="mailto:gavrosh2007@gmail.com">свяжитесь с нами</a> для выставления персонального инвойса и согласования деталей.
+                    </p>
+                </div>
+            </div>
+
             <div class="contact-info">
                 <h3>Контактная информация</h3>
                 <p>Телефон (GSM/WhatsApp/Viber): +357 99453575</p>
@@ -162,6 +294,42 @@
                 <h3>Photos</h3>
                 <a href="https://www.dropbox.com/scl/fo/yesufog7kgrlxbe4n396t/AL3iiDg3pGW7JJV3D_TSlHM?rlkey=t815b871mg107uih347gy8xgv" class="cta">View More Photos</a>
             </div>
+
+            <!-- ===== ПЛАТЁЖНЫЙ МОДУЛЬ (английская версия) ===== -->
+            <div class="payment-module">
+                <h2 style="color: #e8491d;">💳 Payment Demo</h2>
+                <p style="color: #ccc;">This is a test payment module for demonstration purposes.</p>
+                <div class="pay-grid">
+                    <div class="pay-card">
+                        <h3>💳 Fiat Money</h3>
+                        <p class="desc">Visa, Mastercard, Apple Pay, Google Pay</p>
+                        <div class="amount-row">
+                            <label>Amount (€):</label>
+                            <input type="number" id="fiat-amount-en" value="20" min="1" step="1">
+                        </div>
+                        <button class="pay-btn fiat-pay-en">💳 Pay by card</button>
+                        <p class="currency-note">We accept: EUR, USD, CHF, JPY, CNY</p>
+                    </div>
+                    <div class="pay-card">
+                        <h3>🪙 Digital Money</h3>
+                        <p class="desc">Bitcoin, Ethereum, USDT, and 350+ others</p>
+                        <div class="amount-row">
+                            <label>Amount (€):</label>
+                            <input type="number" id="crypto-amount-en" value="20" min="1" step="1">
+                        </div>
+                        <button class="pay-btn crypto-pay-en">🪙 Pay with crypto</button>
+                        <p class="currency-note">Customer chooses currency on payment page</p>
+                    </div>
+                </div>
+                <div class="info-note">
+                    <p>
+                        📄 <strong>Custom terms</strong><br>
+                        For large deals, corporate orders or special conditions, please 
+                        <a href="mailto:gavrosh2007@gmail.com">contact us</a> to issue a personal invoice and agree on details.
+                    </p>
+                </div>
+            </div>
+
             <div class="contact-info">
                 <h3>Contact Information</h3>
                 <p>Phone (GSM/WhatsApp/Viber): +357 99453575</p>
@@ -182,7 +350,8 @@
                     <a href="terms.html">Условия использования</a> |
                     <a href="robots.txt" target="_blank">robots.txt</a> |
                     <a href="sitemap.xml" target="_blank">sitemap.xml</a> |
-                    <a href="humans.txt" target="_blank">humans.txt</a>
+                    <a href="humans.txt" target="_blank">humans.txt</a> |
+                    <a href="payment-policy.html">Платёжная политика</a>
                 </p>
             </div>
             <div id="footer-en" style="display: none;">
@@ -192,14 +361,15 @@
                     <a href="terms.html">Terms of Use</a> |
                     <a href="robots.txt" target="_blank">robots.txt</a> |
                     <a href="sitemap.xml" target="_blank">sitemap.xml</a> |
-                    <a href="humans.txt" target="_blank">humans.txt</a>
+                    <a href="humans.txt" target="_blank">humans.txt</a> |
+                    <a href="payment-policy.html">Payment Policy</a>
                 </p>
             </div>
         </footer>
     </div>
 
     <script>
-        // ---- Музыка (toggle play/pause) ----
+        // ---- Музыка ----
         const audioElem = document.getElementById('audio');
         const musicBtn = document.getElementById('musicToggleBtn');
         let isPlaying = false;
@@ -257,7 +427,32 @@
         // Инициализация
         setLanguage('ru');
 
-        // Если аудио не загрузилось (пользователь не кликнул), предзагрузка не обязательна
+        // ---- Платежные кнопки (заглушки) ----
+        document.querySelectorAll('.fiat-pay-ru').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const amount = document.getElementById('fiat-amount-ru').value;
+                alert('💳 Обычный платёж: €' + amount + '\n\n(тестовый режим)');
+            });
+        });
+        document.querySelectorAll('.crypto-pay-ru').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const amount = document.getElementById('crypto-amount-ru').value;
+                alert('🪙 Криптоплатёж: €' + amount + '\n\n(тестовый режим)');
+            });
+        });
+        document.querySelectorAll('.fiat-pay-en').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const amount = document.getElementById('fiat-amount-en').value;
+                alert('💳 Fiat payment: €' + amount + '\n\n(test mode)');
+            });
+        });
+        document.querySelectorAll('.crypto-pay-en').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const amount = document.getElementById('crypto-amount-en').value;
+                alert('🪙 Crypto payment: €' + amount + '\n\n(test mode)');
+            });
+        });
+
         audioElem.load();
     </script>
 </body>
