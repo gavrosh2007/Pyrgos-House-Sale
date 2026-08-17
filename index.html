@@ -64,7 +64,6 @@
             padding: 20px;
             margin: 20px 0;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .cta {
             background: #e8491d;
@@ -109,15 +108,47 @@
             text-decoration: underline;
         }
 
-        /* ===== ПЛАТЁЖНЫЙ МОДУЛЬ (адаптирован под тёмную тему) ===== */
+        /* ===== TYPEFORM ===== */
+        .typeform-wrapper {
+            background: rgba(255,255,255,0.05);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(232, 73, 29, 0.2);
+        }
+        .typeform-wrapper iframe {
+            width: 100%;
+            height: 275px;
+            border: none;
+            border-radius: 1rem;
+        }
+        .typeform-note {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 700px) {
+            .typeform-wrapper iframe { height: 250px; }
+            .container { width: 95%; padding: 10px; }
+            .pay-grid { flex-direction: column; }
+            .pay-card { min-width: auto; }
+        }
+
+        /* ===== ПЛАТЁЖНЫЙ МОДУЛЬ (прозрачный фон) ===== */
         .payment-module {
-            background: rgba(0, 0, 0, 0.7);
+            background: transparent;
             border-radius: 2rem;
             padding: 2rem;
             text-align: center;
-            border: 1px solid rgba(232, 73, 29, 0.4);
+            border: 1px solid rgba(232, 73, 29, 0.3);
             margin: 2rem auto;
             max-width: 100%;
+        }
+        .payment-module h2 {
+            color: #e8491d;
+        }
+        .payment-module .sub-desc {
+            color: #ccc;
         }
         .pay-grid {
             display: flex;
@@ -128,10 +159,10 @@
         .pay-card {
             flex: 1;
             min-width: 280px;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.06);
             border-radius: 2rem;
             padding: 1.5rem;
-            border: 1px solid rgba(232, 73, 29, 0.2);
+            border: 1px solid rgba(232, 73, 29, 0.15);
         }
         .pay-card h3 {
             color: #e8491d;
@@ -183,7 +214,7 @@
         .info-note {
             margin-top: 2rem;
             padding: 1.2rem;
-            background: rgba(232, 73, 29, 0.1);
+            background: rgba(232, 73, 29, 0.08);
             border-radius: 2rem;
             border-left: 4px solid #e8491d;
         }
@@ -198,11 +229,6 @@
             color: #e8491d;
             text-decoration: underline;
             font-weight: 600;
-        }
-        @media (max-width: 700px) {
-            .pay-grid { flex-direction: column; }
-            .pay-card { min-width: auto; }
-            .container { width: 95%; padding: 10px; }
         }
     </style>
 </head>
@@ -235,10 +261,18 @@
                 <a href="https://www.dropbox.com/scl/fo/yesufog7kgrlxbe4n396t/AL3iiDg3pGW7JJV3D_TSlHM?rlkey=t815b871mg107uih347gy8xgv" class="cta">Посмотреть фото</a>
             </div>
 
-            <!-- ===== ПЛАТЁЖНЫЙ МОДУЛЬ (только для пояснений, сумма 20 €) ===== -->
+            <!-- ===== TYPEFORM ===== -->
+            <div class="typeform-wrapper">
+                <div class="typeform-note">
+                    ✉️ Эта форма обрабатывается через головную компанию <strong>Hermes Management & Consulting Ltd</strong>, которая гарантирует полную защиту ваших данных.
+                </div>
+                <iframe src="https://form.typeform.com/to/I3eAXtZt" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;"></iframe>
+            </div>
+
+            <!-- ===== ПЛАТЁЖНЫЙ МОДУЛЬ (прозрачный фон) ===== -->
             <div class="payment-module">
-                <h2 style="color: #e8491d;">💳 Демонстрация оплаты</h2>
-                <p style="color: #ccc;">Это тестовый платёжный модуль для пояснения возможностей.</p>
+                <h2>💳 Демонстрация оплаты</h2>
+                <p class="sub-desc">Это тестовый модуль для пояснения возможностей оплаты.</p>
                 <div class="pay-grid">
                     <div class="pay-card">
                         <h3>💳 Обычные деньги</h3>
@@ -295,10 +329,18 @@
                 <a href="https://www.dropbox.com/scl/fo/yesufog7kgrlxbe4n396t/AL3iiDg3pGW7JJV3D_TSlHM?rlkey=t815b871mg107uih347gy8xgv" class="cta">View More Photos</a>
             </div>
 
-            <!-- ===== ПЛАТЁЖНЫЙ МОДУЛЬ (английская версия) ===== -->
+            <!-- ===== TYPEFORM (EN) ===== -->
+            <div class="typeform-wrapper">
+                <div class="typeform-note">
+                    ✉️ This form is processed through the parent company <strong>Hermes Management & Consulting Ltd</strong>, which ensures full protection of your data.
+                </div>
+                <iframe src="https://form.typeform.com/to/I3eAXtZt" frameborder="0" allow="camera; microphone; autoplay; encrypted-media;"></iframe>
+            </div>
+
+            <!-- ===== ПЛАТЁЖНЫЙ МОДУЛЬ (EN) ===== -->
             <div class="payment-module">
-                <h2 style="color: #e8491d;">💳 Payment Demo</h2>
-                <p style="color: #ccc;">This is a test payment module for demonstration purposes.</p>
+                <h2>💳 Payment Demo</h2>
+                <p class="sub-desc">This is a test module for payment demonstration.</p>
                 <div class="pay-grid">
                     <div class="pay-card">
                         <h3>💳 Fiat Money</h3>
